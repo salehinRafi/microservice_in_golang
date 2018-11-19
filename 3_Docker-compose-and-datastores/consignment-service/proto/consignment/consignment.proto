@@ -1,0 +1,53 @@
+syntax="proto3";
+
+package go.micro.srv.consignment;
+
+service ShippingService {
+    rpc CreateConsignment (Consignment) returns (Response);
+    rpc GetConsignments (GetRequest) returns (Response);
+}
+
+message Consignment {
+    string id =1;
+    string description = 2;
+    int32 weight = 3;
+    repeated Container containers = 4;
+    string vessel_id = 5;
+}
+
+message Container {
+    string id = 1;
+    string customer_id = 2;
+    string origin = 3;
+    string user_id = 4;
+}
+
+// Created a blank get request
+message GetRequest {}
+
+message Response {
+    bool created = 1;
+    Consignment consignment = 2;
+
+    // Added a pluralised consignment to our generic response message
+  repeated Consignment consignments = 3;
+}
+
+/*
+What happen here?
+
+1. We define our service, that should contain the methods that we wish to expose to other services.
+
+2. We define our message type, these are effectively our data structure:-
+    i. The " = 1", " = 2" markers on each element identify the unique "tag" that field uses in the binary encoding. Tag numbers 1-15 require one less byte to encode than higher numbers, so as an optimization you can decide to use those tags for the commonly used or repeated elements, leaving tags 16 and higher for less-commonly used optional elements. Each element in a repeated field requires re-encoding the tag number, so repeated fields are particularly good candidates for this optimization.
+
+    ii. If a field value isn't set, a default value is used: "zero" for numeric types, the "empty string" for strings, "false" for bools. For embedded messages, the default value is always the "default instance" or "prototype" of the message, which has none of its fields set. Calling the accessor to get the value of a field which has not been explicitly set always returns that field's default value.
+
+    iii. If a field is `repeated`, the field may be repeated any number of times (including zero). The order of the repeated values will be preserved in the protocol buffer. Think of repeated fields as dynamically sized arrays.
+
+3. Two library at work here:-
+    - `message` are handled by protobuf
+    - `service` is handled by gRPC
+
+4. This protobuf definition is then ran through a CLI to generate the code to interface this binary data and your functionality.
+*/
