@@ -12,7 +12,7 @@
 
 ### Install following libraries
 
--   `tutorial-part-1 : (Basics of writing a gRPC based microservice)`
+-   `tutorial-part-1 : Basics of writing a gRPC based microservice`
 
     ```
     gRPC Package - go get -u google.golang.org/grpc
