@@ -12,7 +12,7 @@ services:
     environment:
       MICRO_REGISTRY: "mdns"
 
-  user-cli:
+  user-client:
     build: ./user-client
     environment:
       MICRO_REGISTRY: "mdns"
