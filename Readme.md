@@ -57,19 +57,24 @@ With microservices, that separation allows you to scale individual services indi
 ### Install following libraries
 
 -   `tutorial-part-1 : (Basics of writing a gRPC based microservice)`
+-   
     ```
     gRPC Package - go get -u google.golang.org/grpc
     Go-micro dependencies - go get -u github.com/golang/protobuf/protoc-gen-go
+    
     ```
 -   `tutorial-part-2 : Docker and go-micro`
     ```
+    
     Go-micro - go get github.com/micro/micro
     Cross Compilation (linux) - go get golang.org/x/sys/unix
     ```
+    
 - `tutorial-part-3 : docker-compose and datastores`
+- 
     ```
-    Object-relational mapping (ORM) library for golang. - `go get -u github.com/jinzhu/gorm`
-    Go implementation of Universally Unique Identifier (UUID). - `go get github.com/satori/go.uuid`
+    Object-relational mapping (ORM) library for golang. - go get -u github.com/jinzhu/gorm
+    Go implementation of Universally Unique Identifier (UUID). - go get github.com/satori/go.uuid
     ```
 # Microservice
 ### Why?
