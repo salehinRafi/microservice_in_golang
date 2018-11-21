@@ -17,4 +17,6 @@ RUN mkdir /app
 WORKDIR /app
 COPY --from=builder /go/src/microservice_in_golang/3_Docker-compose-and-datastores/user-client/user-client .
 
+ENTRYPOINT ["./user-client"]
+
 CMD ["./user-client"]

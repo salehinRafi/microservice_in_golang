@@ -12,11 +12,6 @@ services:
     environment:
       MICRO_REGISTRY: "mdns"
 
-  user-client:
-    build: ./user-client
-    environment:
-      MICRO_REGISTRY: "mdns"
-
   consignment-service:
     build: ./consignment-service
     ports:
@@ -47,6 +42,12 @@ services:
       DB_PORT: "5432"
       DB_USER: "postgres"
       DB_PASSWORD: "postgres"
+
+  user-client:
+    build: ./user-client
+    environment:
+      MICRO_REGISTRY: "mdns"
+
 
   datastore:
     image: mongo
