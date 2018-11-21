@@ -39,6 +39,6 @@ func (s *service) Create(ctx context.Context, req *pb.Vessel, res *pb.Response) 
 		return err
 	}
 	res.Vessel = req
-	res.Create = true
+	res.Created = true
 	return nil
 }
