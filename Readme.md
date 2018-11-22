@@ -30,7 +30,7 @@
 
     ```
     Object-relational mapping (ORM) library for golang. - go get -u github.com/jinzhu/gorm
-    Go implementation of Universally Unique Identifier (UUID). - go get github.com/satori/go.uuid
+    Go implementation of Universally Unique Identifier (UUID). - go get github.com/gofrs/uuid
     ```
 
 # Microservice

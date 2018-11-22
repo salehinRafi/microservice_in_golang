@@ -4,16 +4,17 @@ import (
 	"log"
 
 	"github.com/jinzhu/gorm"
-	"github.com/satori/go.uuid"
+	"github.com/gofrs/uuid"
 )
 
 func (model *User) BeforeCreate(scope *gorm.Scope) error {
-	uuid, err := uuid.NewV4()
+	u1, err := uuid.NewV4()
 	if err != nil {
-		log.Fatalf("Could not create: %v", err)
+		log.Fatalf("Failed to generate UUID: %v", err)
 		return nil
 	}
-	return scope.SetColumn("id", uuid.String())
+	log.Printf("generated Version 4 UUID %v", u1)
+	return scope.SetColumn("id", u1.String())
 }
 
 /*
