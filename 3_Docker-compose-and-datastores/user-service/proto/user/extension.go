@@ -8,8 +8,12 @@ import (
 )
 
 func (model *User) BeforeCreate(scope *gorm.Scope) error {
-	uuid := uuid.Must(uuid.NewV4()).String()
-	return scope.SetColumn("id", uuid)
+	uuid, err := uuid.NewV4()
+	if err != nil {
+		log.Fatalf("Could not create: %v", err)
+		return
+	}
+	return scope.SetColumn("id", uuid.String())
 }
 
 /*

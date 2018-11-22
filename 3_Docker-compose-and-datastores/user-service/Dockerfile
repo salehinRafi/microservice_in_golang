@@ -6,7 +6,7 @@ COPY . .
 
 RUN go get -u github.com/golang/dep/cmd/dep
 RUN dep init && dep ensure
-RUN CGO_ENABLED=0 GOOS=linux go build -o user-service -a -installsuffix cgo .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo .
 FROM alpine:latest
 
 RUN apk --no-cache add ca-certificates
