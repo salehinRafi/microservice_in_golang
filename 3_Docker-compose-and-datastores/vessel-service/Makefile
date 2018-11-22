@@ -1,7 +1,8 @@
 build:
-		protoc -I. --go_out=plugins=micro:$(GOPATH)\src\microservice_in_golang\3_Docker-compose-and-datastores\vessel-service \
+		protoc -I. --go_out=plugins=micro:$(GOPATH)\src\github.com\salehinRafi\microservice_in_golang\3_Docker-compose-and-datastores\vessel-service \
     		proto\vessel\vessel.proto
-		#docker build -t vessel-service .
+
+		docker build -t vessel-service .
 
 # We can't run two docker containers on the same port, so we make use of Dockers port forwarding here to ensure this service forwards 50051 to 50052 on the host network.
 

@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	// Import the generated protobuf code and go-micro library.
-	pb "microservice_in_golang/2_Docker-and-go-micro/vessel-service/proto/vessel"
+	pb "github.com/salehinRafi/microservice_in_golang/2_Docker-and-go-micro/vessel-service/proto/vessel"
 
 	"github.com/micro/go-micro"
 )

@@ -1,5 +1,5 @@
 build:
-		protoc -I. --go_out=plugins=micro:$(GOPATH)\src\microservice_in_golang\3_Docker-compose-and-datastores\user-service \
+		protoc -I. --go_out=plugins=micro:$(GOPATH)\src\github.com\salehinRafi\microservice_in_golang\3_Docker-compose-and-datastores\user-service \
 			proto\user\user.proto
 		docker build -t user-service .
 

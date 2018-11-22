@@ -9,7 +9,7 @@ import (
 
 	"github.com/micro/go-micro/cmd"
 
-	pb "microservice_in_golang/2_Docker-and-go-micro/consignment-service/proto/consignment"
+	pb "github.com/salehinRafi/microservice_in_golang/2_Docker-and-go-micro/consignment-service/proto/consignment"
 
 	microclient "github.com/micro/go-micro/client"
 )

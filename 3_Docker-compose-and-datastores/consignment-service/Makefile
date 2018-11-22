@@ -1,5 +1,5 @@
 build:
-		protoc -I. --go_out=plugins=micro:$(GOPATH)\src\microservice_in_golang\3_Docker-compose-and-datastores\consignment-service \
+		protoc -I. --go_out=plugins=micro:$(GOPATH)\src\github.com\salehinRafi\microservice_in_golang/3_Docker-compose-and-datastores\consignment-service \
 			proto\consignment\consignment.proto
 
 		docker build -t consignment-service .

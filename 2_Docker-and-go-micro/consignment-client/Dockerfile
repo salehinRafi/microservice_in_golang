@@ -1,6 +1,6 @@
 FROM golang:latest as builder
 
-WORKDIR /go/src/microservice_in_golang/2_Docker-and-go-micro/consignment-client
+WORKDIR /go/src/github.com/salehinRafi/microservice_in_golang/2_Docker-and-go-micro/consignment-client
 
 COPY . .
 
