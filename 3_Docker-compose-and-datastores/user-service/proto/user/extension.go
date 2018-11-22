@@ -11,7 +11,7 @@ func (model *User) BeforeCreate(scope *gorm.Scope) error {
 	uuid, err := uuid.NewV4()
 	if err != nil {
 		log.Fatalf("Could not create: %v", err)
-		return err
+		return nil
 	}
 	return scope.SetColumn("id", uuid.String())
 }
