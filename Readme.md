@@ -29,8 +29,8 @@
 - `tutorial-part-3 : docker-compose and datastores`
 
     ```
-    Object-relational mapping (ORM) library for golang. - `go get -u github.com/jinzhu/gorm`
-    Go implementation of Universally Unique Identifier (UUID). - `go get github.com/satori/go.uuid`
+    Object-relational mapping (ORM) library for golang. - go get -u github.com/jinzhu/gorm
+    Go implementation of Universally Unique Identifier (UUID). - go get github.com/satori/go.uuid
     ```
 
 # Microservice
@@ -44,7 +44,9 @@ With microservices, that separation allows you to scale individual services indi
 ### Issues
 ##### Communication
 - Because microservices are split out into separate codebases, one important issue with microservices, is communication.
+
 - In a monolith communication is not an issue, as you call code directly from elsewhere in your codebase. However, microservices don't have that ability, as they live in separate places. So you need a way in which these independent services can talk to one another with as little latency as possible.
+
 - Why not use REST? (JSON or XML over http).
     > Process encode and decode between services has a potential overhead problems at scale.
 
